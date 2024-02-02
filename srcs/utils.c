@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/01 14:21:27 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/01 14:32:26 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include <../libft/includes/libft.h>
-# include <../libft/includes/ft_printf.h>
-# include "fcntl.h"
-
-typedef struct s_app
+void	free_tab(void **tab, int size)
 {
-	char	*file;
-	int		*data;
-	int		fd;
-	int		size;
-	char	*line;
-	char	**splat_line;
-}	t_app;
+	int	i;
 
-void	read_data(t_app *app);
-void	free_tab(void **tab, int size);
-
-
-#endif 
+	i = 0;
+	if (!tab)
+		return ;
+	while (i < size)
+	{
+		if (tab[i])
+			free(tab[i++]);
+	}
+	free(tab);
+}

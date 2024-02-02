@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/01 14:21:27 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/02 08:38:36 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include <../libft/includes/libft.h>
-# include <../libft/includes/ft_printf.h>
-# include "fcntl.h"
-
-typedef struct s_app
+int	main(int argc, char **argv)
 {
-	char	*file;
-	int		*data;
-	int		fd;
-	int		size;
-	char	*line;
-	char	**splat_line;
-}	t_app;
+	t_app	*app;
 
-void	read_data(t_app *app);
-void	free_tab(void **tab, int size);
-
-
-#endif 
+	if (!argv[1] || argc != 2)
+		quit("Wrong arguments");
+	app = malloc(sizeof(t_app));
+	app->file = argv[1];
+	read_data(app); 
+	int i = 0;
+	while (i < app->size)
+		ft_printf("%d\n", app->data[i++]);
+	free_tab_in((void **)app->data, app->size);
+	// free(app);
+	return (0);
+}
