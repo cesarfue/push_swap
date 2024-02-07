@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/06 18:28:13 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/06 17:30:27 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/06 18:04:00 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	*calloc_er(size_t nmemb, size_t size, t_app *app, float err)
 {
-	t_app	*app;
+	void		*ret;
 
-	if (!argv[1] || argc != 2)
-		quit("Wrong arguments");
-	app = ft_calloc(1, sizeof(t_app));
-	if (!app)
-		quit("Memory allocation failed");
-	app->entry = argv[1];
-	read_data(app);
-	tab_to_list(app);
-	quit_app(app, 0);
-	return (0);
+	ret = ft_calloc(nmemb, size);
+	if (ret == NULL)
+		quit_app(app, err);
+	return (ret);
+}
+
+void	err_code(float err)
+{
+	if (err == 0)
+		exit(0);
+	else if (err == 1)
+		quit("1");
+}
+
+void	quit_app(t_app * app, float err)
+{
+	free(app->data);
+	free(app);
+	err_code(err);
 }

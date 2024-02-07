@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/01 14:22:29 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/06 18:13:34 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME			=	ps
 SRCS_LIST		=	main.c \
 					parsing.c \
 					utils.c \
-
+					error.c \
+					
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/
 INCLUDES_DIR	=	includes/
