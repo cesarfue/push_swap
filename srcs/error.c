@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:30:27 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 20:19:27 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 20:46:35 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void	err_code(float err)
 		quit("Error\n");
 }
 
-void	quit_app(t_lst **la, t_lst **lb, float err)
+void	quit_app(t_lst **la, float err)
 {
 	lstfree(la);
-	lstfree(lb);
 	err_code(err);
 }

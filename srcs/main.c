@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 20:25:28 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 20:55:33 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	main(int argc, char **argv)
 	else
 		la = args_to_list(argc, argv);
 	if (!la)
-		quit_app(&la, &lb, 1); 
+		quit_app(&la, 1); 
 	lb = NULL;
 	radix(&la, &lb);
 	show(&la, &lb);
-	quit_app(&la, &lb, 0); 
+	quit_app(&la, 0); 
 	return (0);
 }

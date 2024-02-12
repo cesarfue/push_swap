@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 20:18:48 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 20:46:45 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_lst
 	int				lsd;
 }	t_lst;
 
-void	quit_app(t_lst **la, t_lst **lb, float err);
+void	quit_app(t_lst **la, float err);
 t_lst	*args_to_list(int argc, char **argv);
 void	show(t_lst **la, t_lst **lb);
 void	*tabjoin(char **str, int *size);
