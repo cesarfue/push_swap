@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/cesar/Cursus/push_swap/",
-      "program": "/home/cesar/Cursus/push_swap/ps",
+      "program": "/home/cesar/Cursus/push_swap/push_swap",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 18:45:10 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 20:06:58 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,13 @@ void	radix(t_lst **la, t_lst **lb)
 	int power;
 
 	power = 1;
-	while (1)
+	while (is_sorted(*la) == 0)
 	{
 		get_lsd(la, power);
 		stack_change(la, lb);
-		if (is_sorted(*la) == 1)
-			return ;
 		power *= 10;
 		get_lsd(lb, power);
 		stack_change(lb, la);
-		if (is_sorted(*la) == 1)
-			return ;
 		power *= 10;
 	}
 }

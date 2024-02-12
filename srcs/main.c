@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 18:43:50 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 20:25:28 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	show(t_lst **la, t_lst **lb)
 {
-
-	// sa(la);
-	// pb(lb, la);
-	// ra(la);
 	t_lst *tmpa = *la;
 	t_lst *tmpb = *lb;
 	printf("\npile a :  ");
@@ -41,7 +37,7 @@ int	main(int argc, char **argv)
 	t_lst	*lb;
 
 	if (!argv[1] || argc < 2)
-		quit("Wrong arguments");
+		quit("Error\n");
 	else
 		la = args_to_list(argc, argv);
 	if (!la)
