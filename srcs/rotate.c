@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:40:11 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 10:04:33 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 16:31:30 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	rotate(t_lst **lst)
 {
-	t_lst *tmp;
+	t_lst	*tmp;
 
 	tmp = *lst;
 	*lst = (*lst)->next; 
-	lstadd_back(lst, tmp);
 	tmp->next = NULL;
+	lstadd_back(lst, tmp);
 }
 
 void	ra(t_lst **la)

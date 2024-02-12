@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:22:14 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 11:30:49 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 15:00:46 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,24 @@ void	lstadd_back(t_lst **lst, t_lst *new)
 	}
 }
 
+/*	Get last element	*/
 t_lst	*lstlast(t_lst *lst)
 {
 	t_lst *last;
 
 	last = lst; 
-	while (last)
+	while (last && last->next)
 		last = last->next;
 	return (last); 
 }
 
+/*	Get element before last element	*/
 t_lst	*lstblast(t_lst *lst)
 {
 	t_lst	*blast;
 
 	blast = lst;
-	while (blast->next->next)
+	while (blast && blast->next->next)
 		blast = blast->next;
 	return (blast);
 }
@@ -81,4 +83,17 @@ void	lstfree(t_lst **lst)
 		*lst = tmp;
 	}
 	*lst = NULL;
+}
+
+int	lstsize(t_lst *lst)
+{
+	size_t	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return ((int)size);
 }

@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:38:58 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 09:47:21 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 16:55:28 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	push(t_lst **dest, t_lst **src)
 
 	if (*src == NULL)
 		return ;
-	tmp = (*src)->next;
-	(*src)->next = *dest; 
-	*dest = *src;
-	*src = tmp;
+	tmp = *src;
+	*src = (*src)->next; 
+	tmp->next = NULL;
+	lstadd_front(dest, tmp);
 }
 
 void	pa(t_lst **la, t_lst **lb)

@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 11:19:23 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 18:43:50 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	show(t_lst **la, t_lst **lb)
 {
 
-	// sa(*la);
+	// sa(la);
 	// pb(lb, la);
-	rra(la);
+	// ra(la);
 	t_lst *tmpa = *la;
 	t_lst *tmpb = *lb;
 	printf("\npile a :  ");
@@ -47,6 +47,7 @@ int	main(int argc, char **argv)
 	if (!la)
 		quit_app(&la, &lb, 1); 
 	lb = NULL;
+	radix(&la, &lb);
 	show(&la, &lb);
 	quit_app(&la, &lb, 0); 
 	return (0);

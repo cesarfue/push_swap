@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 11:28:50 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/12 15:53:06 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,31 @@
 
 typedef struct	s_lst
 {
-	int				val;
 	struct s_lst	*next;
+	int				val;
+	int				lsd;
 }	t_lst;
 
 void	quit_app(t_lst **la, t_lst **lb, float err);
 t_lst	*args_to_list(int argc, char **argv);
 void	show(t_lst **la, t_lst **lb);
 void	*tabjoin(char **str, int *size);
-
+void	radix(t_lst **la, t_lst **lb);
 
 /* List manipulation */
+
 t_lst	*lstnew(int val);
 void	lstadd_back(t_lst **lst, t_lst *new);
 void	lstadd_front(t_lst **lst, t_lst *new);
 void	lstfree(t_lst **lst);
 t_lst	*lstlast(t_lst *lst);
+t_lst	*lstblast(t_lst *lst);
+int	lstsize(t_lst *lst);
+
 
 
 /* Instructions */
+
 void	sa(t_lst **la);
 void	sb(t_lst **lb);
 void	ss(t_lst **la, t_lst **lb);
