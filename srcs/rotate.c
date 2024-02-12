@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 17:30:27 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 09:08:30 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/09 12:40:11 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/12 10:04:33 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	err_code(float err)
+void	rotate(t_lst **lst)
 {
-	if (err == 0)
-		exit(0);
-	else if (err == 1)
-		quit("Invalid arguments");
-	else if (err == 2)
-		quit("Memory allocation failed (2; linked list)");
+	t_lst *tmp;
+
+	tmp = *lst;
+	*lst = (*lst)->next; 
+	lstadd_back(lst, tmp);
+	tmp->next = NULL;
 }
 
-void	quit_app(t_lst **la, t_lst **lb, float err)
+void	ra(t_lst **la)
 {
-	if (err >= 2 || err == 0)
-	{
-		lstfree(la);
-		lstfree(lb);
-	}
-	err_code(err);
+	rotate(la); 
+	ft_printf("ra\n");
+}
+
+void	rb(t_lst **lb)
+{
+	rotate(lb); 
+	ft_printf("rb\n");
+}
+
+void	rr(t_lst **la, t_lst **lb)
+{
+	rotate(la); 
+	rotate(lb);
+	ft_printf("rr\n");
 }

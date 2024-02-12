@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/09 15:42:17 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/09 12:39:21 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/12 09:53:28 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_tab(void **tab, int size)
+void	swap(t_lst *lst)
 {
-	int	i;
+	int	tmp;
 
-	i = 0;
-	if (!tab)
+	if (!lst || !lst->next)
 		return ;
-	while (i < size)
-	{
-		if (tab[i])
-			free(tab[i++]);
-	}
-	free(tab);
+	tmp = lst->val;
+	lst->val = lst->next->val;
+	lst->next->val = tmp;
 }
 
-void	*tabjoin(char **str, int *size)
+void	sa(t_lst **la)
 {
-	int		*data;
+	swap(*la);
+	ft_printf("sa\n");
+}
 
-	*size = 0;
-	data = NULL;
-	while (str[*size])
-	{
-		data = ft_realloc(&data, *size * sizeof(int), ((*size) + 1) * sizeof(int));
-		if (!data)
-			return (freetab((void **)str, *size), NULL);
-		data[*size] = ft_atoi(str[*size]);
-		free(str[(*size)++]);
-	}
-	free(str);
-	return (data);
+void	sb(t_lst **lb)
+{
+	swap(*lb);
+	ft_printf("lb\n");
+}
+
+void	ss(t_lst **la, t_lst **lb)
+{
+	swap(*la);
+	swap(*lb);
+	ft_printf("ss\n"); 
 }

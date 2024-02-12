@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/09 15:42:17 by cesar            ###   ########.fr       */
+/*   Created: 2024/02/09 12:38:58 by cesar             #+#    #+#             */
+/*   Updated: 2024/02/12 09:47:21 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_tab(void **tab, int size)
+void	push(t_lst **dest, t_lst **src)
 {
-	int	i;
+	t_lst *tmp;
 
-	i = 0;
-	if (!tab)
+	if (*src == NULL)
 		return ;
-	while (i < size)
-	{
-		if (tab[i])
-			free(tab[i++]);
-	}
-	free(tab);
+	tmp = (*src)->next;
+	(*src)->next = *dest; 
+	*dest = *src;
+	*src = tmp;
 }
 
-void	*tabjoin(char **str, int *size)
+void	pa(t_lst **la, t_lst **lb)
 {
-	int		*data;
+	push(la, lb); 
+	ft_printf("pa\n"); 
+}
 
-	*size = 0;
-	data = NULL;
-	while (str[*size])
-	{
-		data = ft_realloc(&data, *size * sizeof(int), ((*size) + 1) * sizeof(int));
-		if (!data)
-			return (freetab((void **)str, *size), NULL);
-		data[*size] = ft_atoi(str[*size]);
-		free(str[(*size)++]);
-	}
-	free(str);
-	return (data);
+void	pb(t_lst **lb, t_lst **la)
+{
+	push(lb, la);
+	ft_printf("pb\n"); 
 }
