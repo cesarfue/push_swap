@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/13 08:55:14 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/13 14:21:08 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 	t_lst	*la;
 	t_lst	*lb;
 
+	la = NULL;
 	if (!argv[1] || argc < 2)
 		quit("Error\n");
 	else

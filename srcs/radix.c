@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/13 08:58:04 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/13 16:33:59 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	show(t_lst *lst)
 {
-	// ra(lst);
-	// ra(lst);
 	while (lst)
 	{
 		printf("%d\n", lst->val);
@@ -30,10 +28,7 @@ void	get_lsd(t_lst **lst, ssize_t power)
 	tmp = *lst;
 	while (*lst)
 	{
-		// if (power == 1)
-		// 	(*lst)->lsd = (*lst)->val % 10;
-		// else
-			(*lst)->lsd = ((*lst)->val / power) % 10;
+		(*lst)->lsd = ((*lst)->val / power) % 10;
 		*lst = (*lst)->next;
 	}
 	*lst = tmp;
@@ -47,7 +42,6 @@ int	is_sorted(t_lst *lst)
 			return (0);
 		lst = lst->next;
 	}
-	write(1, "was sorted", 11);
 	return (1);
 }
 
@@ -74,7 +68,7 @@ void	stack_change_la(t_lst **la, t_lst **lb)
 			else 
 			{
 				pb(lb, la);
-				rb(lb);
+				// rb(lb);
 				size--;
 			}
 		}
@@ -90,8 +84,8 @@ void	stack_change_lb(t_lst **lb, t_lst **la)
 
 	i = 0;
 	size = lstsize((*lb));
-	i_lsd = 0;
-	while (i_lsd <= 9 && size > 0)
+	i_lsd = -1;
+	while (++i_lsd <= 9 && size > 0)
 	{
 		while (i < size)
 		{
@@ -103,11 +97,10 @@ void	stack_change_lb(t_lst **lb, t_lst **la)
 			else 
 			{
 				pa(la, lb);
-				ra(la);
+				// ra(la);
 				size--;
 			}
 		}
-		i_lsd++;
 		i = 0;
 	}
 }
@@ -123,6 +116,7 @@ void	radix(t_lst **la, t_lst **lb)
 		stack_change_la(la, lb);
 		// write(1, "\nstack b : \n", 13);
 		// show((*lb));
+		// write(1, "\n\n", 3);
 		power *= 10;
 		get_lsd(lb, power);
 		stack_change_lb(lb, la);
@@ -130,6 +124,7 @@ void	radix(t_lst **la, t_lst **lb)
 		// 	return ;
 		// write(1, "\nstack a : \n", 13);
 		// show((*la));
+		// write(1, "\n\n", 3);
 		power *= 10;
 	}
 }
