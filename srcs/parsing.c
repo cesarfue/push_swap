@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/12 09:25:31 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/13 08:33:23 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_lst	*args_to_list(int argc, char **argv)
 {
 	t_lst		*la;
 	t_lst		*new;
-	long int	val;
+	int			val;
 	int			i;
 
 	la = NULL;

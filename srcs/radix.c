@@ -6,29 +6,34 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 22:58:46 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/13 08:58:04 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_la(t_lst **lb, t_lst **la)
+void	show(t_lst *lst)
 {
-	while ((*lb))
+	// ra(lst);
+	// ra(lst);
+	while (lst)
 	{
-		pa(la, lb);
-		ra(la);
+		printf("%d\n", lst->val);
+		lst = lst->next;
 	}
 }
 
-void	get_lsd(t_lst **lst, int power)
+void	get_lsd(t_lst **lst, ssize_t power)
 {
 	t_lst *tmp;
 
 	tmp = *lst;
 	while (*lst)
 	{
-		(*lst)->lsd = ((*lst)->val / power) % 10;
+		// if (power == 1)
+		// 	(*lst)->lsd = (*lst)->val % 10;
+		// else
+			(*lst)->lsd = ((*lst)->val / power) % 10;
 		*lst = (*lst)->next;
 	}
 	*lst = tmp;
@@ -36,17 +41,13 @@ void	get_lsd(t_lst **lst, int power)
 
 int	is_sorted(t_lst *lst)
 {
-	t_lst	*tmp;
-
-	if (!lst)
-		return (0);
-	tmp = lst;
-	while (tmp && tmp->next)
+	while (lst->next)
 	{
-		if (tmp->val > tmp->next->val)
+		if (lst->val > lst->next->val)
 			return (0);
-		tmp = tmp->next;
+		lst = lst->next;
 	}
+	write(1, "was sorted", 11);
 	return (1);
 }
 
@@ -89,8 +90,8 @@ void	stack_change_lb(t_lst **lb, t_lst **la)
 
 	i = 0;
 	size = lstsize((*lb));
-	i_lsd = -1;
-	while (++i_lsd <= 9 && size > 0)
+	i_lsd = 0;
+	while (i_lsd <= 9 && size > 0)
 	{
 		while (i < size)
 		{
@@ -106,22 +107,29 @@ void	stack_change_lb(t_lst **lb, t_lst **la)
 				size--;
 			}
 		}
+		i_lsd++;
 		i = 0;
 	}
 }
 
 void	radix(t_lst **la, t_lst **lb)
 {
-	int power;
+	ssize_t power;
 
 	power = 1;
-	while (is_sorted(*la) == 0)
+	while (is_sorted(*la) == 0 && power < INT_MAX)
 	{
 		get_lsd(la, power);
 		stack_change_la(la, lb);
+		// write(1, "\nstack b : \n", 13);
+		// show((*lb));
 		power *= 10;
 		get_lsd(lb, power);
 		stack_change_lb(lb, la);
+		// if (is_sorted(*la) == 1)	
+		// 	return ;
+		// write(1, "\nstack a : \n", 13);
+		// show((*la));
 		power *= 10;
 	}
 }
