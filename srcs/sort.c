@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/15 08:36:53 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/15 09:23:54 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	count_sort(char list, t_lst **src, t_lst **dest, int max, int size)
 	int		*count;
 	int		i;
 
-	i = 0;
+	i = -1;
 	tmp = *src;
 	count = init_array(max);
 	if (!count)
@@ -50,9 +50,8 @@ void	count_sort(char list, t_lst **src, t_lst **dest, int max, int size)
 		count[tmp->lsd]++;
 		tmp = tmp->next;
 	}
-	while (++i < size)
+	while (++i < max)
 		count[i] += count[i - 1];
-	get_indexes(src);
 	while (*src)
 	{
 		i = count[(*src)->lsd]--;
