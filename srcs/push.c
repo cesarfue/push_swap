@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:38:58 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/13 16:00:15 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/14 22:24:15 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ void	pb(t_lst **lb, t_lst **la)
 {
 	push(lb, la);
 	ft_printf("pb\n"); 
+}
+
+void	push_to(char list, t_lst **dest, t_lst **src)
+{
+	if (list == 'a')
+		pa(dest, src);
+	else if (list == 'b')
+		pb(src, dest);
 }

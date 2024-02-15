@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:40:11 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/13 16:00:04 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/14 21:57:23 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,12 @@ void	rr(t_lst **la, t_lst **lb)
 	rotate(la); 
 	rotate(lb);
 	ft_printf("rr\n");
+}
+
+void	rotate_to(char list, t_lst **lst)
+{
+	if (list == 'a')
+		ra(lst);
+	else if (list == 'b')
+		rb(lst);
 }

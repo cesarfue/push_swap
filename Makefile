@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/12 18:22:54 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/14 22:29:17 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS_LIST		=	main.c \
 					push.c \
 					rotate.c \
 					reverse_rotate.c \
-					radix.c \
+					sort.c \
+					sort_utils.c \
 					
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/

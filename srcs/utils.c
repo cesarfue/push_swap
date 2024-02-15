@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/09 15:42:17 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/13 18:23:52 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,24 @@ void	*tabjoin(char **str, int *size)
 	}
 	free(str);
 	return (data);
+}
+
+size_t	intlen(int n)
+{
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		i = 1;
+	else if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
 }

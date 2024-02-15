@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:22:14 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/12 15:00:46 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/14 22:28:46 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	lstadd_front(t_lst **lst, t_lst *new)
 		*lst = new;
 	}
 }
+
 
 void	lstfree(t_lst **lst)
 {
