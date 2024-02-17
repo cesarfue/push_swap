@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:38:58 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/14 22:24:15 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/15 15:00:30 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ void	push_to(char list, t_lst **dest, t_lst **src)
 	if (list == 'a')
 		pa(dest, src);
 	else if (list == 'b')
-		pb(src, dest);
+		pb(dest, src);
 }

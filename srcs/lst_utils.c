@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:22:14 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/14 22:28:46 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/16 15:30:54 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	lstadd_back(t_lst **lst, t_lst *new)
 		while (last->next != NULL)
 			last = last->next;
 		last->next = new;
+		// new->is_first = 0;
 	}
 }
 

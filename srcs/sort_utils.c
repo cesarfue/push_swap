@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:27:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/14 23:00:12 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/15 16:20:46 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,34 +52,15 @@ int	get_largest(t_lst *lst)
 	return (ret); 
 }
 
-int	*init_array(int max)
+int	*init_array(int *count)
 {
 	int	i;
-	int *ret;
 	
-	ret = malloc(max * sizeof(int));
-	if (ret == NULL)
-		return (free(ret), NULL);
+	count = malloc(10 * sizeof(int));
+	if (count == NULL)
+		return (NULL);
 	i = 0;
-	while (i < max)
-		ret[i++] = 0;
-	return (ret);
-}
-
-void	insert_to(char list, t_lst **dest, t_lst **src, int index)
-{
-	t_lst	*tmp;
-
-	tmp = *dest;
-	while (*dest)
-	{
-		if ((*dest)->index == index)
-		{
-			push_to(list, dest, src);
-			break ;
-		}
-		else
-			rotate_to(list, dest);
-	}
-	*dest = tmp;
+	while (i < 10)
+		count[i++] = 0;
+	return (count);
 }

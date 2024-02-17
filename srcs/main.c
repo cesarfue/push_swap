@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/15 09:25:49 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/16 17:25:45 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ int	main(int argc, char **argv)
 		la = args_to_list(argc, argv);
 	if (!la)
 		quit_app(&la, &lb, 1); 
-	get_indexes(&la);
-	lb = init_lb(&la);
-	if (!lb)
-		quit_app(&la, &lb, 1);
 	radix(&la, &lb);
-	// insert_to('b', &lb, &la, 3);
-	show(la);
+	// set_is_first(&la);
+	// show(la, lb);
+	// ra(&la);
+	// show(la, lb);
+	// while (la->is_first == 0)
+	// 	rra(&la);
+	// show(la, lb);
 	quit_app(&la, &lb, 0); 
 	return (0);
 }
