@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/13 18:23:52 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/17 16:35:19 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,25 @@ size_t	intlen(int n)
 	}
 	return (i);
 }
+
+int	check_dups(t_lst **la)
+{
+	t_lst	*i;
+	t_lst	*j;
+
+	i = *la;
+	j = *la;
+	while (i)
+	{
+		while (j)
+		{
+			if (j->val == i->val && j != i)
+				return (1);
+			j = j->next;
+		}
+		j = *la;
+		i = i->next;
+	}
+	return (0);
+}
+

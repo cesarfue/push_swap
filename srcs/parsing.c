@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/16 08:04:41 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/17 16:50:33 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ t_lst	*args_to_list(int argc, char **argv)
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
-		if (val > INT_MAX || val < INT_MIN)
+		if ((!val && val != 0) || val > INT_MAX || val < INT_MIN)
 			return (NULL);
 		new = lstnew(val);
-		new->first = 0;
 		if (new == NULL)
 			return (NULL);
 		lstadd_back(&la, new);
@@ -52,9 +51,7 @@ t_lst	*init_lb(t_lst **la)
 		new = malloc(sizeof(t_lst));
 		if (!new)
 			return (NULL);
-		new->index = (*la)->index;
 		new->next = NULL;
-		new->first = 0;
 		if (last == NULL)
 			lb = new;
 		else

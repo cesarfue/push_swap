@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:27:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/15 16:20:46 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/17 09:55:25 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,6 @@ int	is_sorted(t_lst *lst)
 	return (1);
 }
 
-void	get_indexes(t_lst **lst)
-{
-	t_lst	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = *lst;
-	while (*lst)
-	{
-		(*lst)->index = i++;
-		*lst = (*lst)->next;
-	}
-	*lst = tmp;
-}
-
 int	get_largest(t_lst *lst)
 {
 	int ret;
@@ -49,18 +34,32 @@ int	get_largest(t_lst *lst)
 			ret = lst->val;
 		lst = lst->next;
 	}
-	return (ret); 
+	return (intlen(ret)); 
 }
 
-int	*init_array(int *count)
+
+void	check_is_first(t_lst **lst, t_lst *first)
 {
-	int	i;
-	
-	count = malloc(10 * sizeof(int));
-	if (count == NULL)
-		return (NULL);
-	i = 0;
-	while (i < 10)
-		count[i++] = 0;
-	return (count);
+	if ((*lst)->is_first == 0)
+		return ;
+	(*lst)->is_first = 0;
+	if ((*lst)->next)
+		(*lst)->next->is_first = 1;
+	else
+		first->is_first = 1;
+}
+
+void	set_is_first(t_lst **lst)
+{
+	t_lst	*tmp;
+
+	tmp = *lst;
+	(*lst)->is_first = 1;
+	*lst = (*lst)->next;
+	while (*lst)
+	{
+		(*lst)->is_first = 0;
+		*lst = (*lst)->next; 
+	}
+	*lst = tmp;
 }
