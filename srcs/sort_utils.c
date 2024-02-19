@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:27:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 13:35:46 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 17:21:24 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	check_sum(t_lst **la, int sum)
 	if (sum == 1)
 	{
 		ra(la);
-		show(*la);
 		if (is_sorted(*la))
 			return (1);
 	}

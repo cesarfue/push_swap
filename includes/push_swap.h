@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 15:00:09 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 17:14:49 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@
 # include "fcntl.h"
 
 #include "stdio.h"
-
-// typedef struct s_info
-// {
-// 	ssize_t	power;
-// 	int		iter;
-// 	int		*count;
-// 	int		size;
-// };
-
 
 typedef struct	s_lst
 {
@@ -53,7 +44,7 @@ void	set_is_first(t_lst **lst);
 void	check_is_first(t_lst **lst, t_lst *first);
 int		check_sum(t_lst **la, int sum);
 void	lil_sorts(int argc, t_lst **la);
-void	go_to(char list, t_lst **lst, int type, int target, int size);
+// void	go_to(char list, t_lst **lst, int type, int target, int size);
 
 
 /* List manipulation */

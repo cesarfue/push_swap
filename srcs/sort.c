@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 16:49:52 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 17:18:44 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_lsd(t_lst **lst, ssize_t power)
 	*lst = tmp;
 }
 
-void	count_sort_to_b(t_lst **la, t_lst **lb, int *count, int iter, int size)
+void	count_sort_to_b(t_lst **la, t_lst **lb, int *count, int iter)
 {
 	t_lst	*first;
 	int		i;
@@ -37,18 +37,24 @@ void	count_sort_to_b(t_lst **la, t_lst **lb, int *count, int iter, int size)
 	{
 		while (count[i] > 0)
 		{
-			go_to('a', la, 0, i, size);
-			check_is_first(la, first);
-			pb(lob, la);
-			size--;
-			count[i]--;
+			if (*la && (*la)->lsd == i)
+			{
+				check_is_first(la, first);
+				pb(lb, la);
+				count[i]--;
+			}
+			else
+				ra(la);
 		}
 		if (iter >= 1)
-			go_to('a', la, 1, 1, size);
+		{
+			while (*la && (*la)->is_first == 0)
+				ra(la);
+		}
 	}
 }
 
-void	count_sort_to_a(t_lst **lb, t_lst **la, int *count, int size)
+void	count_sort_to_a(t_lst **lb, t_lst **la, int *count)
 {
 	t_lst	*first;
 	int		i;
@@ -60,13 +66,17 @@ void	count_sort_to_a(t_lst **lb, t_lst **la, int *count, int size)
 	{
 		while (count[i] > 0)
 		{
-			go_to('b', lb, 0, i, size);
-			check_is_first(lb, first);
-			pa(la, lb);
-			size--;
-			count[i]--;
+			if (*lb && (*lb)->lsd == i)
+			{
+				check_is_first(lb, first);
+				pa(la, lb);
+				count[i]--;
+			}
+			else
+				rb(lb);
 		}
-		go_to('b', lb, 1, 1, size);
+		while (*lb && (*lb)->is_first == 0)
+			rb(lb);
 	}
 }
 
@@ -87,12 +97,12 @@ void	radix(t_lst **la, t_lst **lb)
 		count = set_array(*la, count);
 		if (check_sum(la, countsum(count)) == 1)
 			return ;
-		count_sort_to_b(la, lb, count, iter, size);
+		count_sort_to_b(la, lb, count, iter);
 		power *= 10;
 		iter++;
 		get_lsd(lb, power);
 		count = set_array(*lb, count);
-		count_sort_to_a(lb, la, count, size);
+		count_sort_to_a(lb, la, count);
 		power *= 10;
 	}
 	free(count);
