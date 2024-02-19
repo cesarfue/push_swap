@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/17 09:55:55 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/19 13:35:57 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRCS_LIST		=	main.c \
 					sort.c \
 					sort_utils.c \
 					count.c \
+					lil_sorts.c \
+					index_utils.c
 					
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/

@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/17 16:50:33 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 11:53:32 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_lst	*args_to_list(int argc, char **argv)
 	int			i;
 
 	la = NULL;
+	if (argc == 1)
+		return (NULL);
 	i = 1;
 	while (i < argc)
 	{
@@ -62,31 +64,3 @@ t_lst	*init_lb(t_lst **la)
 	*la = tmp;
 	return (lb);
 }
-
-
-
-// t_lst	*char_to_list(int argc, char **argv)
-// {
-// 	int			i;
-// 	int			size;
-// 	int			*data;
-// 	t_lst		*la;
-// 	t_lst		*new;
-// 	long int	val;
-
-// 	size = 0;
-// 	i = 0;
-// 	data = (int *)tabjoin(ft_split(argv[1], ' '), &size);
-// 	while (i < size)
-// 	{
-// 		val = data[i];
-// 		if (val > INT_MAX || val < INT_MIN)
-// 			return (NULL);
-// 		new = lstnew(val);
-// 		if (new == NULL)
-// 			return (NULL);
-// 		lstadd_back(&la, new);
-// 		i++;	
-// 	}
-// 	return (la); 
-// }

@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/17 16:32:51 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 15:00:09 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 
 #include "stdio.h"
 
+// typedef struct s_info
+// {
+// 	ssize_t	power;
+// 	int		iter;
+// 	int		*count;
+// 	int		size;
+// };
+
+
 typedef struct	s_lst
 {
 	struct s_lst	*next;
@@ -29,7 +38,7 @@ typedef struct	s_lst
 
 void	quit_app(t_lst **la, t_lst **lb, float err);
 t_lst	*args_to_list(int argc, char **argv);
-void	show(t_lst *la, t_lst *lb);
+void	show(t_lst *la);
 void	*tabjoin(char **str, int *size);
 void	radix(t_lst **la, t_lst **lb);
 size_t	intlen(int n);
@@ -42,6 +51,10 @@ int		check_dups(t_lst **la);
 int		is_sorted(t_lst *lst);
 void	set_is_first(t_lst **lst);
 void	check_is_first(t_lst **lst, t_lst *first);
+int		check_sum(t_lst **la, int sum);
+void	lil_sorts(int argc, t_lst **la);
+void	go_to(char list, t_lst **lst, int type, int target, int size);
+
 
 /* List manipulation */
 
@@ -52,8 +65,6 @@ void	lstfree(t_lst **lst);
 t_lst	*lstlast(t_lst *lst);
 t_lst	*lstblast(t_lst *lst);
 int		lstsize(t_lst *lst);
-
-
 
 /* Instructions */
 
@@ -71,5 +82,6 @@ void	rotate_to(char list, t_lst **lst);
 void	rra(t_lst **la);
 void	rrb(t_lst **lb);
 void	rrr(t_lst **la, t_lst **lb);
+void	reverse_rotate_to(char list, t_lst **lst);
 
 #endif 

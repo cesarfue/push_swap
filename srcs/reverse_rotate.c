@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:18:12 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/16 13:59:59 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 14:26:31 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,12 @@ void	rrr(t_lst **la, t_lst **lb)
 	reverse_rotate(la); 
 	reverse_rotate(lb);
 	ft_printf("rrr\n");
+}
+
+void	reverse_rotate_to(char list, t_lst **lst)
+{
+	if (list == 'a')
+		rra(lst);
+	else if (list == 'b')
+		rrb(lst);
 }
