@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 17:14:49 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/19 19:43:17 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 # include "fcntl.h"
 
 #include "stdio.h"
+
+typedef struct s_o
+{
+	ssize_t	power;
+	int		iter;
+	int		size;
+	int		max_iter;
+} t_o;
+
 
 typedef struct	s_lst
 {
@@ -44,7 +53,8 @@ void	set_is_first(t_lst **lst);
 void	check_is_first(t_lst **lst, t_lst *first);
 int		check_sum(t_lst **la, int sum);
 void	lil_sorts(int argc, t_lst **la);
-// void	go_to(char list, t_lst **lst, int type, int target, int size);
+void	sort_three(t_lst **la);
+int		ft_atoi(const char *str);
 
 
 /* List manipulation */

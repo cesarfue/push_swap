@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/19 11:53:32 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 19:43:13 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ t_lst	*args_to_list(int argc, char **argv)
 	int			i;
 
 	la = NULL;
-	if (argc == 1)
-		return (NULL);
 	i = 1;
 	while (i < argc)
 	{
 		val = ft_atoi(argv[i]);
-		if ((!val && val != 0) || val > INT_MAX || val < INT_MIN)
+		if (!val || val > INT_MAX || val < INT_MIN)
 			return (NULL);
 		new = lstnew(val);
 		if (new == NULL)

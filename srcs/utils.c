@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:19:52 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/17 16:35:19 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/19 19:49:42 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,33 @@ int	check_dups(t_lst **la)
 		i = i->next;
 	}
 	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	size_t	i;
+	int		x;
+	long	nb;
+
+	i = 0;
+	x = 1;
+	nb = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			x *= -1;
+		i++;
+	}
+	if (str[i] < '0' || str[i] > '9')
+		return (NULL);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		if (LONG_MAX / 10 < nb || LONG_MAX - (str[i] - '0') < nb * 10)
+			return (ft_oversign(x));
+		nb = nb * 10 + (str[i++] - '0');
+	}
+	return (nb * x);
 }
 
