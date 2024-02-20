@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:27:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 17:21:24 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/20 10:10:07 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,12 @@ int	get_largest(t_lst *lst)
 		lst = lst->next;
 	}
 	return (intlen(ret)); 
+}
+
+void	go_first(char list, t_lst **lst, int iter)
+{
+	if (iter == 0 && list == 'a')
+		return ;
+	while (*lst && (*lst)->is_first == 0)
+		rotate_to(list, lst);
 }

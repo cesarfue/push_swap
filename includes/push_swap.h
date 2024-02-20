@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 19:43:17 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/20 09:39:49 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ typedef struct	s_lst
 }	t_lst;
 
 void	quit_app(t_lst **la, t_lst **lb, float err);
-t_lst	*args_to_list(int argc, char **argv);
+t_lst	*args_to_list(int argc, char **argv, int *size);
+t_lst	*str_to_lst(char *str, int *size);
 void	show(t_lst *la);
 void	*tabjoin(char **str, int *size);
 void	radix(t_lst **la, t_lst **lb);
@@ -54,7 +55,8 @@ void	check_is_first(t_lst **lst, t_lst *first);
 int		check_sum(t_lst **la, int sum);
 void	lil_sorts(int argc, t_lst **la);
 void	sort_three(t_lst **la);
-int		ft_atoi(const char *str);
+void	go_first(char list, t_lst **lst, int iter);
+
 
 
 /* List manipulation */
