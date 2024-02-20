@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/20 09:39:49 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/20 23:32:21 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,30 +34,31 @@ typedef struct	s_lst
 	int				val;
 	int				lsd;
 	int				is_first;
+	int				is_theone;
 }	t_lst;
 
+void	show(t_lst *la);
 void	quit_app(t_lst **la, t_lst **lb, float err);
 t_lst	*args_to_list(int argc, char **argv, int *size);
 t_lst	*str_to_lst(char *str, int *size);
-void	show(t_lst *la);
-void	*tabjoin(char **str, int *size);
 void	radix(t_lst **la, t_lst **lb);
 size_t	intlen(int n);
 t_lst	*init_lb(t_lst **la);
 int		get_largest(t_lst *lst);
 int		*init_array(void);
 int		*set_array(t_lst *lst, int *count);
-int		countsum(int *count);
 int		check_dups(t_lst **la);
 int		is_sorted(t_lst *lst);
 void	set_is_first(t_lst **lst);
 void	check_is_first(t_lst **lst, t_lst *first);
-int		check_sum(t_lst **la, int sum);
-void	lil_sorts(int argc, t_lst **la);
+
+/* Tiny sort*/
+
+int		get_lowest(t_lst *lst);
+void	lil_sort(t_lst **la, t_lst **lb);
+void	mark_the_one(t_lst **lst);
+void	go_to_the_one(char list, t_lst **lst, int size);
 void	sort_three(t_lst **la);
-void	go_first(char list, t_lst **lst, int iter);
-
-
 
 /* List manipulation */
 

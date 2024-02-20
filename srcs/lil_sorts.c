@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:44:03 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/20 10:06:51 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/20 23:22:20 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,21 @@ void	sort_three(t_lst **la)
 	}
 }
 
-void	lil_sorts(int size, t_lst **la)
+void	lil_sort(t_lst **la, t_lst **lb)
 {
+	int	size;
+
+	size = lstsize(*la);
 	if (size == 2)
-		sort_two(la);
-	else if (size <= 3)
-		sort_three(la);
+		return (sort_two(la));
+	while (size > 3)
+	{
+		mark_the_one(la);
+		go_to_the_one('a', la, size);
+		pb(lb, la);
+		size--;
+	}
+	sort_three(la);
+	while (*lb)
+		pa(la, lb);
 }

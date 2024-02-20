@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/20 11:08:48 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 00:35:58 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	show(t_lst *lst)
 {
 	while (lst)
 	{
-		printf("%d[%d][%d] ", lst->val, lst->lsd, lst->is_first);
+		printf("%d ", lst->val);
 		lst = lst->next; 
 	}
 	printf("\n");
@@ -42,12 +42,10 @@ int	main(int argc, char **argv)
 		quit_app(&la, &lb, 1);
 	else if (is_sorted(la) == 1)
 		quit_app(&la, &lb, 0);
-	show(lb);
-	if (size <= 3)
-		lil_sorts(size, &la);
+	if (size <= 100)
+		lil_sort(&la, &lb);
 	else
 		radix(&la, &lb);
-	show(la);
 	quit_app(&la, &lb, 0); 
 	return (0);
 }

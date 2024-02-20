@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 13:35:16 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 15:24:13 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/20 23:15:26 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,13 @@ void	set_is_first(t_lst **lst)
 
 /* 
 * Calculate whether to use rotate or reverse rotate
-* to go to the desired node
 */
-int	cost(t_lst *lst, int type, int target, int size)
+int	cost(t_lst *lst, int size)
 {
 	int	cost;
 
 	cost = 0;
-	while (lst && ((type == 0 && (lst->lsd != target))
-		|| (type == 1 && (lst->is_first == 0))))
+	while (lst && (lst->is_theone == 0))
 	{
 		lst = lst->next;
 		cost++;
@@ -68,17 +66,17 @@ int	cost(t_lst *lst, int type, int target, int size)
 }
 
 /*
-* Go to the desired node (type 0 == lsd and type 1 == is_first) 
+* Go to your dream node
 */
-void	go_to(char list, t_lst **lst, int type, int target, int size)
+void	go_to_the_one(char list, t_lst **lst, int size)
 {
 	void (*r)(char, t_lst **);
 
-	if (cost(*lst, type, target, size) == 0)
+	if (cost(*lst, size) == 0)
 		r = rotate_to;
 	else
 		r = reverse_rotate_to;
-	while (*lst && ((type == 0 && ((*lst)->lsd != target))
-		|| (type == 1 && ((*lst)->is_first == 0))))
+	while (*lst && (*lst)->is_theone == 0)
 		r(list, lst);
 }
+

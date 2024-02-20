@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/19 13:35:57 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/20 23:36:49 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ SRCS_LIST		=	main.c \
 					reverse_rotate.c \
 					sort.c \
 					sort_utils.c \
-					count.c \
 					lil_sorts.c \
 					index_utils.c
 					
