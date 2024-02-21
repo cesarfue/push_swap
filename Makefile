@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
+#    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/21 17:37:22 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/21 19:12:23 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS_LIST		=	main.c \
 					sort.c \
 					sort_utils.c \
 					lil_sorts.c \
+					rank.c
 					
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/

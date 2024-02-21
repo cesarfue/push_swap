@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/21 09:37:23 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 19:08:38 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,29 +90,3 @@ t_lst	*args_to_list(int argc, char **argv, int *size)
 	return (la);
 }
 
-t_lst	*init_lb(t_lst **la)
-{
-	t_lst	*lb;
-	t_lst	*tmp;
-	t_lst	*new;
-	t_lst	*last;
-
-	lb = NULL;
-	last = NULL;
-	tmp = *la;
-	while (*la)
-	{
-		new = malloc(sizeof(t_lst));
-		if (!new)
-			return (NULL);
-		new->next = NULL;
-		if (last == NULL)
-			lb = new;
-		else
-			last->next = new;
-		last = new;
-		*la = (*la)->next;
-	}
-	*la = tmp;
-	return (lb);
-}

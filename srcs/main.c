@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 17:06:56 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 18:51:20 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	main(int argc, char **argv)
 		quit_app(&la, &lb, 1);
 	else if (is_sorted(la) == 1)
 		quit_app(&la, &lb, 0);
+	get_rank(&la);
 	if (size < 50)
 		lil_sort(&la, &lb);
 	else
