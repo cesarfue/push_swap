@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 18:46:33 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:25:30 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	only_p(t_lst *la, int i, int size, int shift)
 {
-	while (i < size && ((la->val >> shift) & 0xF) == 0)
+	while (i < size && ((la->rank >> shift) & 1) == 0)
 	{
 		i++;
 		la = la->next;
@@ -33,7 +33,7 @@ void	sort(t_lst **la, t_lst **lb, int shift)
 	size = lstsize(*la);
 	while (i < size)
 	{
-		if ((((*la)->val >> shift) & 1) == 0)
+		if ((((*la)->rank >> shift) & 1) == 0)
 		{
 			if (only_p(*la, i, size, shift) == 1)
 				break ;
@@ -55,6 +55,6 @@ void	radix(t_lst **la, t_lst **lb)
 	while (is_sorted(*la) == 0)
 	{
 		sort(la, lb, shift);
-		shift += 4;
+		shift++;
 	}
 }

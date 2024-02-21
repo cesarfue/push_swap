@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 18:52:03 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:05:55 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_lst	*str_to_lst(char *str, int *size);
 void	radix(t_lst **la, t_lst **lb);
 int		check_dups(t_lst **la);
 int		is_sorted(t_lst *lst);
+void	get_rank(t_lst **la);
+
 
 /* Tiny sort*/
 

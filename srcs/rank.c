@@ -3,33 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   rank.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:08:08 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/21 19:12:11 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:21:50 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	get_lowest(t_lst *lst)
+int	get_next_min(t_lst *lst, int min, int max)
 {
-	int	ret;
-
-	ret = INT_MAX;
-	while (lst)
+	int		next_min;
+	t_lst	*start;
+	
+	start = lst;
+	next_min = min + 1;
+	while (next_min <= max)
 	{
-		if (lst->val < ret)
-			ret = lst->val;
-		lst = lst->next;
+		while (lst)
+		{
+			if (lst->val == next_min)
+				return (next_min);
+			lst = lst->next;
+		}
+		next_min++;
+		lst = start;
 	}
-	return (ret);
+	return (next_min);
 }
 
-int	get_max_rank(t_lst *la, int *max)
+int	get_max(t_lst *la)
 {
-	static int	max = INT_MIN;
+	int	max;
 
+	max = INT_MIN;
 	while (la)
 	{
 		if (la->val > max)
@@ -41,22 +49,25 @@ int	get_max_rank(t_lst *la, int *max)
 
 void	get_rank(t_lst **la)
 {
-	int		max;
 	int		min;
+	int		max;
 	int		size;
 	t_lst	*start;
 	int		rank;
 	
-	max = get_max(*la);
 	min = get_lowest(*la);
+	max = get_max(*la);
 	size = lstsize(*la);
 	start = *la;
 	rank = 0;
 	while (rank < size)
 	{
-		while ((*la)->val != max)
-			la = (*la)->next;
+		while ((*la)->next && (*la)->val != min)
+			*la = (*la)->next;
 		(*la)->rank = rank;
-
+		*la = start;
+		min = get_next_min(*la, min, max);
+		rank++;
 	}
+	*la = start;
 }
