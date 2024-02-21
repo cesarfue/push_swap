@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/20 09:19:57 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 09:37:23 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ t_lst	*args_to_list(int argc, char **argv, int *size)
 	*size = i - 1;
 	return (la);
 }
-
 
 t_lst	*init_lb(t_lst **la)
 {
