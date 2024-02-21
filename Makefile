@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/21 14:25:47 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/21 17:37:22 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME			=	push_swap
 
 SRCS_LIST		=	main.c \
 					parsing.c \
-					utils.c \
 					error.c \
 					lst_utils.c \
 					lst_utils2.c \
@@ -25,7 +24,6 @@ SRCS_LIST		=	main.c \
 					sort.c \
 					sort_utils.c \
 					lil_sorts.c \
-					index_utils.c
 					
 SRCS_DIR		=	srcs/
 OBJS_DIR		=	objs/
@@ -33,9 +31,10 @@ INCLUDES_DIR	=	includes/
 
 OBJS			=	$(patsubst %.c, $(OBJS_DIR)%.o, $(SRCS))
 SRCS			=	$(addprefix $(SRCS_DIR),$(SRCS_LIST))
+HEADER			=	$(INCLUDES_DIR)push_swap.h
 
 CC				=	cc
-FLAGS			=	-Wall -Wextra -g 
+FLAGS			=	-Wall -Wextra -Werror -g 
 RM				=	rm -rf
 	
 LIBFT			=	libft/libft.a 
@@ -48,11 +47,9 @@ all			:	$(NAME)
 $(NAME)		:	libft $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -L$(LIBFT_DIR) -l$(LIBFT_LINK) -o $(NAME)
 
-
-$(OBJS_DIR)%.o	:	%.c
+$(OBJS_DIR)%.o	:	%.c $(HEADER)
 	mkdir -p $(dir $@)
 	$(CC) $(FLAGS) -I$(INCLUDES_DIR) -I$(LIBFT_DIR) -c $< -o $@
-
 
 libft	:
 	$(MAKE) -C $(LIBFT_DIR)

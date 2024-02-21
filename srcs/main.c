@@ -6,20 +6,31 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 14:26:34 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 17:06:56 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	show(t_lst *lst)
+int	check_dups(t_lst **la)
 {
-	while (lst)
+	t_lst	*i;
+	t_lst	*j;
+
+	i = *la;
+	j = *la;
+	while (i)
 	{
-		printf("%d ", lst->val);
-		lst = lst->next; 
+		while (j)
+		{
+			if (j->val == i->val && j != i)
+				return (1);
+			j = j->next;
+		}
+		j = *la;
+		i = i->next;
 	}
-	printf("\n");
+	return (0);
 }
 
 int	main(int argc, char **argv)
