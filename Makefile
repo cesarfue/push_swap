@@ -6,7 +6,7 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 12:34:28 by cesar             #+#    #+#              #
-#    Updated: 2024/02/20 23:36:49 by cesar            ###   ########.fr        #
+#    Updated: 2024/02/21 14:25:47 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS_LIST		=	main.c \
 					utils.c \
 					error.c \
 					lst_utils.c \
+					lst_utils2.c \
 					swap.c \
 					push.c \
 					rotate.c \

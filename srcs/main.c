@@ -6,7 +6,7 @@
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 00:35:58 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/21 14:26:34 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 		quit_app(&la, &lb, 1);
 	else if (is_sorted(la) == 1)
 		quit_app(&la, &lb, 0);
-	if (size <= 100)
+	if (size < 50)
 		lil_sort(&la, &lb);
 	else
 		radix(&la, &lb);
