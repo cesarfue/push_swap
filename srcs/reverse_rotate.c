@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:18:12 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/19 14:26:31 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:44:14 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ void	reverse_rotate(t_lst **lst)
 
 void	rra(t_lst **la)
 {
-	reverse_rotate(la); 
+	reverse_rotate(la);
 	ft_printf("rra\n");
 }
 
 void	rrb(t_lst **lb)
 {
-	reverse_rotate(lb); 
+	reverse_rotate(lb);
 	ft_printf("rrb\n");
 }
 
 void	rrr(t_lst **la, t_lst **lb)
 {
-	reverse_rotate(la); 
+	reverse_rotate(la);
 	reverse_rotate(lb);
 	ft_printf("rrr\n");
 }

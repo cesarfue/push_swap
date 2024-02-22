@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 11:12:49 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 18:52:03 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:43:21 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <../libft/includes/ft_printf.h>
 # include "fcntl.h"
 
-typedef struct	s_lst
+typedef struct s_lst
 {
 	struct s_lst	*next;
 	int				val;

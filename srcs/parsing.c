@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/21 19:08:38 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:42:10 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,8 @@ t_lst	*args_to_list(int argc, char **argv, int *size)
 		if (new == NULL)
 			return (NULL);
 		lstadd_back(&la, new);
-		i++;	
+		i++;
 	}
 	*size = i - 1;
 	return (la);
 }
-

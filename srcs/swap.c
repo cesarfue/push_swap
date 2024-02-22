@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 12:39:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/14 21:58:29 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:42:58 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ss(t_lst **la, t_lst **lb)
 {
 	swap(*la);
 	swap(*lb);
-	ft_printf("ss\n"); 
+	ft_printf("ss\n");
 }
 
 void	swap_to(char list, t_lst **lst)

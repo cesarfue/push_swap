@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 13:35:40 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 18:46:33 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:44:53 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sort(t_lst **la, t_lst **lb, int shift)
 			pb(lb, la);
 		}
 		else
-			ra(la); 
+			ra(la);
 		i++;
 	}
 	while (*lb)

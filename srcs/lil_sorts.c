@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lil_sorts.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:44:03 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/20 23:22:20 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:44:26 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ void	sort_three(t_lst **la)
 {
 	if ((*la)->val > (*la)->next->val && (*la)->val < (*la)->next->next->val)
 		sa(la);
-	else if ((*la)->val > (*la)->next->val && (*la)->val > (*la)->next->next->val)
+	else if ((*la)->val > (*la)->next->val
+		&& (*la)->val > (*la)->next->next->val)
 	{
 		if ((*la)->next->val < (*la)->next->next->val)
 			ra(la);
 		else
 		{
 			ra(la);
-			sa(la);  
+			sa(la);
 		}
 	}
 	else if ((*la)->next->val > (*la)->next->next->val)

@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 22:27:21 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 19:07:57 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:45:15 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	cost(t_lst *lst, int size)
 	}
 	if (cost <= size / 2)
 		return (0);
-	return (1);	
+	return (1);
 }
 
 void	mark_the_one(t_lst **lst)
@@ -72,7 +72,7 @@ void	mark_the_one(t_lst **lst)
 
 void	go_to_the_one(char list, t_lst **lst, int size)
 {
-	void (*r)(char, t_lst **);
+	void	(*r)(char, t_lst **);
 
 	if (cost(*lst, size) == 0)
 		r = rotate_to;

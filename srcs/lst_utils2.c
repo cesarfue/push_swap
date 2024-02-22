@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 09:35:57 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 09:36:53 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:41:54 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	lstadd_back(t_lst **lst, t_lst *new)
 /*	Get last element	*/
 t_lst	*lstlast(t_lst *lst)
 {
-	t_lst *last;
+	t_lst	*last;
 
-	last = lst; 
+	last = lst;
 	while (last && last->next)
 		last = last->next;
-	return (last); 
+	return (last);
 }
 
 /*	Get element before last element	*/

@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:04:29 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 18:51:20 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:44:40 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	else
 		la = args_to_list(argc, argv, &size);
 	if (!la)
-		quit_app(&la, &lb, 1); 
+		quit_app(&la, &lb, 1);
 	else if (check_dups(&la) == 1)
 		quit_app(&la, &lb, 1);
 	else if (is_sorted(la) == 1)
@@ -58,6 +58,6 @@ int	main(int argc, char **argv)
 		lil_sort(&la, &lb);
 	else
 		radix(&la, &lb);
-	quit_app(&la, &lb, 0); 
+	quit_app(&la, &lb, 0);
 	return (0);
 }

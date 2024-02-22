@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:08:08 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/21 19:12:11 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:45:28 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	get_rank(t_lst **la)
 	int		size;
 	t_lst	*start;
 	int		rank;
-	
+
 	max = get_max(*la);
 	min = get_lowest(*la);
 	size = lstsize(*la);
@@ -57,6 +57,5 @@ void	get_rank(t_lst **la)
 		while ((*la)->val != max)
 			la = (*la)->next;
 		(*la)->rank = rank;
-
 	}
 }

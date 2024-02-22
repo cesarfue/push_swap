@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 11:22:14 by cesar             #+#    #+#             */
-/*   Updated: 2024/02/21 09:36:30 by cesar            ###   ########.fr       */
+/*   Updated: 2024/02/22 12:41:38 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_lst	*lstnew(int val)
 	lst->next = NULL;
 	return (lst);
 }
-
 
 void	lstfree(t_lst **lst)
 {
