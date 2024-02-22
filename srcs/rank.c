@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:08:08 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/22 12:54:47 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:55:48 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	get_next_min(t_lst *lst, int min, int max)
 {
 	int		next_min;
 	t_lst	*start;
-	
+
 	start = lst;
 	next_min = min + 1;
 	while (next_min <= max)
@@ -54,7 +54,7 @@ void	get_rank(t_lst **la)
 	int		size;
 	t_lst	*start;
 	int		rank;
-	
+
 	min = get_lowest(*la);
 	max = get_max(*la);
 	size = lstsize(*la);
