@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:16:37 by cefuente          #+#    #+#             */
-/*   Updated: 2024/02/22 12:42:10 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:03:54 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,16 @@ int	atosi(const char *str, int *ret)
 	return (*ret = (int)nb, 1);
 }
 
+void	freetab_ukwn(void **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
+}
+
 t_lst	*str_to_lst(char *str, int *size)
 {
 	t_lst		*la;
@@ -52,13 +62,15 @@ t_lst	*str_to_lst(char *str, int *size)
 	la = NULL;
 	i = 0;
 	tab = ft_split(str, ' ');
+	if (!tab)
+		return (NULL);
 	while (tab[i])
 	{
-		if (!atosi(tab[i], &val))
-			return (freetab((void **)tab, i), NULL);
+		if (atosi(tab[i], &val) == 0)
+			return (freetab_ukwn((void **)tab), lstfree(&la), NULL);
 		new = lstnew((int)val);
 		if (new == NULL)
-			return (freetab((void **)tab, i), NULL);
+			return (freetab_ukwn((void **)tab), lstfree(&la), NULL);
 		lstadd_back(&la, new);
 		i++;
 	}
@@ -79,10 +91,10 @@ t_lst	*args_to_list(int argc, char **argv, int *size)
 	while (i < argc)
 	{
 		if (!atosi(argv[i], &val))
-			return (NULL);
+			return (lstfree(&la), NULL);
 		new = lstnew((int)val);
 		if (new == NULL)
-			return (NULL);
+			return (lstfree(&la), NULL);
 		lstadd_back(&la, new);
 		i++;
 	}
